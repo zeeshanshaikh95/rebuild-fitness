@@ -44,14 +44,14 @@ export const HERO_SLIDES_DEFAULT: IHeroSlide[] = [
 ];
 
 export const WHATSAPP_TEMPLATE_DEFAULT =
-  'Hi Rebuild Sports & Fitness Center! 💪\n' +
+  'Hi Rebuild Sports & Fitness Center!\n' +
   'I would like to book the following:\n' +
   '{{ITEMS}}\n' +
   'Estimated total: {{TOTAL}}\n\n' +
   'Please share the available slots and confirm what it costs.';
 
 export const WHATSAPP_TEMPLATE_SINGLE_DEFAULT =
-  'Hi Rebuild Sports & Fitness Center! 💪\n' +
+  'Hi Rebuild Sports & Fitness Center!\n' +
   'I would like to book:\n' +
   '• {{PRODUCT}}\n' +
   '{{VARIANT_LINE}}{{QTY_LINE}}Price: {{PRICE}}\n\n' +

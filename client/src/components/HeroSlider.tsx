@@ -281,30 +281,34 @@ export function HeroSlider() {
                     ))}
                   </div>
                 ) : null}
+
+                <div className="ml-1 flex items-center gap-2 sm:ml-3">
+                  <button
+                    type="button"
+                    aria-label="Previous slide"
+                    onClick={() => go(index - 1)}
+                    className="flex h-9 w-9 items-center justify-center border border-white/20 text-chalk transition-colors hover:border-forge-400 hover:bg-forge-400 hover:text-coal"
+                  >
+                    <svg viewBox="0 0 24 24" className="h-3.5 w-3.5" fill="none" stroke="currentColor" strokeWidth="2">
+                      <path d="M15 5l-7 7 7 7" strokeLinecap="square" />
+                    </svg>
+                  </button>
+                  <button
+                    type="button"
+                    aria-label="Next slide"
+                    onClick={() => go(index + 1)}
+                    className="flex h-9 w-9 items-center justify-center border border-white/20 text-chalk transition-colors hover:border-forge-400 hover:bg-forge-400 hover:text-coal"
+                  >
+                    <svg viewBox="0 0 24 24" className="h-3.5 w-3.5" fill="none" stroke="currentColor" strokeWidth="2">
+                      <path d="M9 5l7 7-7 7" strokeLinecap="square" />
+                    </svg>
+                  </button>
+                </div>
               </div>
 
-              <div className="flex items-center gap-2">
-                <button
-                  type="button"
-                  aria-label="Previous slide"
-                  onClick={() => go(index - 1)}
-                  className="flex h-10 w-10 items-center justify-center border border-white/20 text-chalk transition-colors hover:border-forge-400 hover:bg-forge-400 hover:text-coal"
-                >
-                  <svg viewBox="0 0 24 24" className="h-4 w-4" fill="none" stroke="currentColor" strokeWidth="2">
-                    <path d="M15 5l-7 7 7 7" strokeLinecap="square" />
-                  </svg>
-                </button>
-                <button
-                  type="button"
-                  aria-label="Next slide"
-                  onClick={() => go(index + 1)}
-                  className="flex h-10 w-10 items-center justify-center border border-white/20 text-chalk transition-colors hover:border-forge-400 hover:bg-forge-400 hover:text-coal"
-                >
-                  <svg viewBox="0 0 24 24" className="h-4 w-4" fill="none" stroke="currentColor" strokeWidth="2">
-                    <path d="M9 5l7 7-7 7" strokeLinecap="square" />
-                  </svg>
-                </button>
-              </div>
+              <span className="hidden font-mono text-[9px] uppercase tracking-wide2 text-dust lg:block">
+                Swipe · ← →
+              </span>
             </div>
 
             <dl className="grid grid-cols-2 gap-px border-t border-white/15 bg-white/15 sm:grid-cols-4">

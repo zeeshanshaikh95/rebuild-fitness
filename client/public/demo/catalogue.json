@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-25T21:53:46.645Z",
+  "generatedAt": "2026-11-25T21:59:31.890Z",
   "settings": {
     "businessName": "Rebuild Sports & Fitness Center",
     "tagline": "Rebuild your limits",
@@ -9,8 +9,8 @@
     "email": "",
     "city": "Lal Baug, Parel, Mumbai",
     "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Rebuild+Sports+And+Fitness+Centre+Lal+Baug+Parel+Mumbai",
-    "whatsappTemplate": "Hi Rebuild Sports & Fitness Center! 💪\nI would like to book the following:\n{{ITEMS}}\nEstimated total: {{TOTAL}}\n\nPlease share the available slots and confirm what it costs.",
-    "whatsappSingleProductTemplate": "Hi Rebuild Sports & Fitness Center! 💪\nI would like to book:\n• {{PRODUCT}}\n{{VARIANT_LINE}}{{QTY_LINE}}Price: {{PRICE}}\n\nPlease share the available slots and confirm what it costs.",
+    "whatsappTemplate": "Hi Rebuild Sports & Fitness Center!\nI would like to book the following:\n{{ITEMS}}\nEstimated total: {{TOTAL}}\n\nPlease share the available slots and confirm what it costs.",
+    "whatsappSingleProductTemplate": "Hi Rebuild Sports & Fitness Center!\nI would like to book:\n• {{PRODUCT}}\n{{VARIANT_LINE}}{{QTY_LINE}}Price: {{PRICE}}\n\nPlease share the available slots and confirm what it costs.",
     "heroSlides": [
       {
         "imageUrl": "/images/arena-cover.jpg",
