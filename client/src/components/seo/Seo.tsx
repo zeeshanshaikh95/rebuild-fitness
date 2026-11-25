@@ -52,8 +52,13 @@ function clearMarked(selectors: string[]): void {
 }
 
 export function Seo({ title, description, canonicalPath, image, jsonLd, noIndex }: Props) {
-  const canonical = canonicalPath ? new URL(canonicalPath, SITE_URL).href : undefined;
-  const imageUrl = new URL(image || OG_IMAGE, SITE_URL).href;
+  // Project sites live under /<repo>/, and a root-relative canonicalPath would
+  // otherwise resolve against the domain root and drop that prefix.
+  const base = SITE_URL.replace(/\/+$/, '');
+  const canonical = canonicalPath
+    ? `${base}${canonicalPath.startsWith('/') ? '' : '/'}${canonicalPath}`
+    : undefined;
+  const imageUrl = new URL(image || OG_IMAGE, `${base}/`).href;
 
   useEffect(() => {
     document.title = title;
