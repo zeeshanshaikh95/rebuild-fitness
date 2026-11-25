@@ -42,7 +42,7 @@ Push to `main` and `.github/workflows/deploy-pages.yml` rebuilds and redeploys a
 ## Tech stack
 
 | Layer | Technology |
-| Frontend | React 18 + Vite 6 + TypeScript, Tailwind CSS 3, React Router 6, react-helmet-async |
+| Frontend | React 18 + Vite 6 + TypeScript, Tailwind CSS 3, React Router 6, a small in-house head manager for per-page SEO |
 | Backend | Node + Express 4 + TypeScript, Zod validation |
 | Database | MongoDB + Mongoose 8 (Atlas in production; a bundled local mongod for dev) |
 | Auth | JWT bearer tokens + bcrypt (12 rounds), protected `/api/admin/*` |
