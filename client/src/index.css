@@ -1,0 +1,203 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+
+  body {
+    @apply bg-coal font-body text-chalk antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    @apply font-display font-bold uppercase;
+    font-stretch: condensed;
+  }
+
+  :focus-visible {
+    @apply outline-none ring-2 ring-forge-400 ring-offset-2 ring-offset-coal;
+  }
+
+  ::selection {
+    @apply bg-forge-400 text-coal;
+  }
+
+  /* Thin, dark scrollbar so the admin and drawers match the site. */
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: #2b3038 #0e1013;
+  }
+}
+
+@layer components {
+  .shell {
+    @apply mx-auto w-full max-w-7xl px-5 sm:px-8 lg:px-12;
+  }
+
+  .eyebrow {
+    @apply inline-flex items-center gap-2.5 text-[10px] font-semibold uppercase tracking-micro text-forge-300;
+  }
+
+  .eyebrow::before {
+    content: '';
+    @apply block h-2 w-2 bg-forge-400;
+  }
+
+  .hairline {
+    @apply border-t border-white/10;
+  }
+
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 border px-6 py-3 font-display text-sm font-semibold uppercase leading-none tracking-wide2 transition-all duration-300 ease-editorial disabled:cursor-not-allowed disabled:opacity-40;
+  }
+
+  .btn-solid {
+    @apply btn border-forge-400 bg-forge-400 text-coal hover:border-forge-300 hover:bg-forge-300;
+    box-shadow: 0 16px 34px -22px rgba(255, 122, 26, 0.8);
+  }
+
+  .btn-line {
+    @apply btn border-white/25 bg-transparent text-chalk hover:border-forge-400 hover:text-forge-300;
+  }
+
+  .btn-dark {
+    @apply btn border-coal bg-coal text-chalk hover:bg-forge-400 hover:text-coal;
+  }
+
+  .btn-ghost {
+    @apply btn border-transparent bg-transparent px-3 py-2 normal-case tracking-normal text-ash hover:text-forge-300;
+  }
+
+  .btn-quiet {
+    @apply btn-ghost;
+  }
+
+  .field {
+    @apply w-full border border-white/10 bg-coal px-3.5 py-2.5 text-sm text-chalk placeholder:text-dust focus:border-forge-400/70 focus:outline-none;
+  }
+
+  .field-label {
+    @apply mb-1.5 block text-[10px] font-semibold uppercase tracking-wide2 text-ash;
+  }
+
+  .panel {
+    @apply border border-white/10 bg-steel;
+  }
+
+  .badge {
+    @apply inline-flex items-center border px-2 py-0.5 font-display text-[10px] font-semibold uppercase tracking-wide2;
+  }
+
+  .badge-dark {
+    @apply badge border-forge-400 bg-forge-400 text-coal;
+  }
+
+  .badge-line {
+    @apply badge border-white/25 bg-coal/80 text-chalk backdrop-blur-sm;
+  }
+
+  .link-quiet {
+    @apply text-ash underline decoration-forge-400/40 underline-offset-4 transition-colors hover:text-forge-300 hover:decoration-forge-400;
+  }
+
+  .skeleton {
+    @apply animate-pulse bg-smoke;
+  }
+
+  .glass {
+    @apply border border-white/10 bg-coal/70 backdrop-blur-xl;
+  }
+
+  .prose-editorial p {
+    @apply mb-4 leading-[1.85] text-ash;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  /* Hard diagonal cut, used on photo panels and CTA cards. */
+  .cut-tr {
+    clip-path: polygon(0 0, 100% 0, 100% calc(100% - 3.5rem), calc(100% - 3.5rem) 100%, 0 100%);
+  }
+
+  .cut-bl {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 3.5rem 100%, 0 calc(100% - 3.5rem));
+  }
+
+  .cut-corner {
+    clip-path: polygon(0 0, calc(100% - 1.25rem) 0, 100% 1.25rem, 100% 100%, 0 100%);
+  }
+
+  /* Orange marking-tape stripe. */
+  .mark-tape {
+    background-image: repeating-linear-gradient(
+      -45deg,
+      #ff7a1a 0 9px,
+      #0a0a0b 9px 18px
+    );
+  }
+
+  .floor-grid {
+    background-image: linear-gradient(rgba(255, 255, 255, 0.035) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255, 255, 255, 0.035) 1px, transparent 1px);
+    background-size: 64px 64px;
+  }
+
+  .outline-type {
+    color: transparent;
+    -webkit-text-stroke: 1px rgba(243, 244, 239, 0.45);
+  }
+
+  .outline-type-forge {
+    color: transparent;
+    -webkit-text-stroke: 1px rgba(255, 122, 26, 0.75);
+  }
+
+  .edge-fade {
+    -webkit-mask-image: linear-gradient(to bottom, #000 78%, transparent 100%);
+    mask-image: linear-gradient(to bottom, #000 78%, transparent 100%);
+  }
+
+  .marquee-track {
+    animation: marquee 32s linear infinite;
+  }
+
+  .marquee-track:hover {
+    animation-play-state: paused;
+  }
+
+  .writing-vertical {
+    writing-mode: vertical-rl;
+  }
+}
